@@ -1,0 +1,12 @@
+Type de base : 
+	-> list, string sont des objets construits au sein de classes
+		- type(li) -> nom de la classe (li=[1,2,3]=
+		- dir(li) -> la liste des méthodes de la classe list
+		- help (list()) -> méthodes + leur documentation
+	-> Syntaxe POO
+		objet.méthode(args)
+		exemple : 
+			[1,5,2].reverse()
+			[1,5,2].sort()
+			"bonjour".upper()
+

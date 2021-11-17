@@ -1,0 +1,80 @@
+Complexité d'un algorithme -> 
+	- Evaluer son temps et non de son espace de mémoire
+	- Complexité dans le pire des cas : max d'opérations
+	- Exprimé en fonction de la taille "n" des données
+	- Cas asymptotique quand n prend de grandes valeurs
+
+import time
+t1 = time.perf_counter()
+# INTRUCTIONS
+t2 = time.perf_counter()
+print("Temps d'execution :", t2-t1)
+
+Exemple 1 : 		
+1. sum = 0
+2. for i in range(n):		
+3.     sum+= 1			
+	-> Nombre d'opérations
+	1.                             affectation
+	2. i=0	1                      affectation
+	   Pour chaque tour de boucle  (n*)
+	   i+1			       add
+	   i+=i+1                      affectation
+	   sum+1                       add
+	3. sum = sum+1                 affectation
+	   i<n :                       comparaison
+Nombre d'opérations : 1+1+n(1+1+1+1+1)=5n+2 (Chaque instruction compte pour 1)
+	-> n+b : linéaire en n 
+	-> du premier degré en n
+Si n double (complexité double): 
+	n=2n
+	~5(n) -> 5*(2n) = 10n
+
+
+Exemple 2 : Recherche d'une valeur dans une liste triée (croissant)
+Recherche naive : par balayage de gauche à droite
+	def recherche1(t,v):
+		for i in range(len(t)):
+			if v == t[i]:
+				return True,i
+		return False,None
+
+	Pire des cas :  - v >= t[-1]
+		- taille des données : n = len(t)
+	Chaque tour, 5 opérations
+	T(n)=5n+1 -> O(n) complexité linéaire (forme n+b)
+
+Recherche dichotomique : 
+	-> On accède à l'élément au milieu
+	-> On coupe avec v
+	-> Dans le pire des cas on recommence à chercher dans une "motié" de liste
+	-> A chaque dichotomie : on divise par ~2 la taille des données
+		- Calcul du rang du milieu      3 opérations  
+		- Accès au t[mid]		1 opération
+		- v==t[mid]			1 opération
+		- maj d'une borne		1 affectation
+	Combien de dichotomies au max pour t de taille n ?
+		~log indice(2) (n)
+		T(n)~(3+1+1+1)log indice(2) (n) = 6log indice(2) (n) en O(log(n))
+		Pour t de taille 2**k, il faut au pire des cas k dichotomies pour conclure
+		n=2**k => k=log indice(2) (n)
+		Complexité en log(n) est ++ rapide qu'une complexité en linéaire
+		Si taille t double, il y'a seulement une dichotomie de +
+
+
+Exemple 3 : Complexité du tri par selection 
+	Complexité : O(n**2)
+	T(n)~polynome de degré 2 en n
+ 	Il y'a 2 boucles imbriquées -> souvent complexité quadratique
+
+Exemple 4 : Complexité du tri par fusion  
+	Complexité : O(n*log(n))
+	log(n)<<n
+	n*log(n)<<n**2
+	Complexité de la fusion est linéaire -> ~2n*5
+
+Liste de taille 10**4 = 10,000
+	-> Tri par selection (quadratique) : en O(10**8)
+	-> Tri par fusion : O(log(n)*n) : en O(4*n=4*10**4)
+
+from time import perf_counter()																																				

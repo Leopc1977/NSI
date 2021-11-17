@@ -1,0 +1,17 @@
+EX : CALCUL DE PUISSANCE
+	Programmation iterative
+		def powerIt(b,n): #int b:base int n:exposant
+			prod = 1
+			for i in range(n-1):
+				prod*=b
+			return prod		
+
+	Programmation récursives
+		def powerIt2(b,n):
+    			if n==0:
+				return 1
+    			else:
+        			return b*powerIt2(b,n-1)
+
+lst=[13,14,-2,0,6,6,-6,9,3.14,29,7,-54]
+def merge(l1,l2): #fusion l1 et l2
