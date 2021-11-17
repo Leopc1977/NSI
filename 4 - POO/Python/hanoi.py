@@ -1,3 +1,4 @@
+from _typeshed import ReadableBuffer
 from turtle import *
 
 class Hanoi():
@@ -61,11 +62,42 @@ class Hanoi():
                 thirdTower.append(firstTower.pop())
                 self.Affiche()
             self.Resolve(n-1, secondTower, firstTower, thirdTower)
+    def line(s, x,y,tourne,l,key):
+        up()
+        goto(x,y)
+        left(tourne)
+        down()
+        color("black")
+        forward(l)
+        write(key+2)
+        right(tourne)
+
     def Draw(s):
-        pass        
+        xPeg = -200
+        y0 = -100
+        s.line(-600,y0,0,1200,0)
+        for t in range(s.n,-1,-1):
+            #pieu
+            x,y,tourne,l,key = xPeg*(t-1),y0,90,500,0
+            up()
+            goto(x,y)
+            left(tourne)
+            down()
+            color("black")
+            forward(l)
+            write(key+2)
+            right(tourne)
+
+            #disk
+            for d in s.lstEmplacements[t]:
+                pass
+
+
+setup(600,600)
+speed("fastest")
 n=3
 testHanoi=Hanoi(n)
+testHanoi.Draw()
+
 testHanoi.Resolve(n,testHanoi.lstEmplacements[0],[],[])
-testHanoi.Affiche()
-#testHanoi.PlayStepbyStep()
 done()
