@@ -1,0 +1,3 @@
+Noeud principal : Racine
+Taille : Nombre d'éléments
+Profondeur : Nombre de générations en comptant ou pas la racine (précisé par l'exercice)
