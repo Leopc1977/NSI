@@ -163,7 +163,7 @@ while 1:
                 display_surface.blit(tileSet[0], (x,y)) #WALL INTERIEUR
             elif e==1 or e==20:
                 display_surface.blit(tileSet[1],(x,y))  #WHITE WAY
-            """elif e==10:
+                """elif e==10:
                 display_surface.blit(tileSet[6],(x,y)) #VISITED"""
             else: 
                 #print(e)
