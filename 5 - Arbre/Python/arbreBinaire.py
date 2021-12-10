@@ -77,9 +77,33 @@ class Node:
             if type(right)==list:
                 if len(right)>0:
                     lstLeaves.append(right)
-        return lstLeaves        
-def createBT(lstOfKeys):
-    lstNode = [Node() for i in range(len(lstOfKeys)//2)]
+        return lstLeaves
+    def getLevel(s,level,lstNode,cmp):
+        if s.isLeaf():
+            for i in range(len(lstNode)-1,-1,-1):
+                if type(lstNode[i])!=Node: lstNode.pop(i)
+            return lstNode.append(s)
+        elif cmp==level:
+            for i in range(len(lstNode)-1,-1,-1):
+                if type(lstNode[i])!=Node: lstNode.pop(i)
+            return lstNode.append(s)
+
+        left,right=None,None
+        if s.left:
+            left = s.left.getLevel(level,lstNode,cmp+1)
+        if s.right:
+            right = s.right.getLevel(level,lstNode,cmp+1)
+        if left:
+            lstNode.append(left)
+        if right:
+            lstNode.append(right)
+        for i in range(len(lstNode)-1,-1,-1):
+            if type(lstNode[i])!=Node: lstNode.pop(i)
+            
+        return lstNode
+
+def createBT(lstOfKeys): # a finir
+    lstNode = [Node() for i in range(len(lstOfKeys))]
     for k in range(len(lstOfKeys)):
         try:
             lstNode[k].key = lstOfKeys[k]
@@ -90,7 +114,9 @@ def createBT(lstOfKeys):
         except:
             pass
     node = lstNode[0]
-    for n in lstNode :
+    for k in range(len(lstNode)):
+        pass
+    for n in lstNode:
         n.print()
     return node
 
@@ -99,8 +125,6 @@ b = Node(3,Node(8))
 e = Node(2,a,b)
 f = Node (1,e)
 
-tree = f.getTree(f,[f.key])
-leaves = f.getLeaves([])
-
-lst = [0,1,2,3,4,5,6]
-node = createBT(lst)
+lstLevel = f.getLevel(3,[],0)
+for e in lstLevel:
+    e.print()

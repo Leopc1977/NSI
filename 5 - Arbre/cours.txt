@@ -1,3 +1,7 @@
 Noeud principal : Racine
 Taille : Nombre d'éléments
 Profondeur : Nombre de générations en comptant ou pas la racine (précisé par l'exercice)
+
+Un arbre binaire de recherche : arbre triée à partir d'une liste. 
+- fils gauche : petit  
+- fils droit : grand
