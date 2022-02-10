@@ -2,6 +2,8 @@ Noeud principal : Racine
 Taille : Nombre d'éléments
 Profondeur : Nombre de générations en comptant ou pas la racine (précisé par l'exercice)
 
+Binary Search Tree (BST	)
 Un arbre binaire de recherche : arbre triée à partir d'une liste. 
-- fils gauche : petit  
-- fils droit : grand
+- fils gauche : petit et <= à la racine
+- fils droit : grand et > à la racine
+

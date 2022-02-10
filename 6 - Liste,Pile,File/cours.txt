@@ -1,0 +1,19 @@
+Liste : 
+    char (cellule) = tête
+    cdr (cellule) = queue/reste
+
+Cellule:
+    Valeur
+    Pointeur vers la prochaine valeur
+
+Primitives de base :
+
+« Insérer » : ajoute un élément dans la liste. Terme anglais correspondant : « Add » ;
+« Retirer » : retire un élément de la liste. Terme anglais correspondant : « Remove » ;
+« La liste est-elle vide ? » : renvoie « vrai » si la liste est vide, « faux » sinon. Terme anglais correspondant : « IsNull » ;
+« Nombre d'éléments dans la liste » : renvoie le nombre d'éléments dans la liste. Terme anglais correspondant : « Length ».
+
+Implémentation Abstrait Data Type "Liste" par des "Tuple"s
+
+Implémentation Abstrait Data Type "Liste" par des classes
+    Liste construite en tant que "cellule"s chainées
