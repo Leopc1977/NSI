@@ -9,3 +9,19 @@ Representation informatique :
         3|[0,1,0,1]
         4|[1,0,0,0]   
   ]
+
+En profondeur d'abord : 
+      On suit les liens de descendances qui n'ont pas encore été exploré.
+      Un noeud peut avoir un successseur qui a déja été exploré.
+      On mémorise donc les noeuds visités.
+
+      DFS : 
+            Pile
+            Tant que la pile n'est pas vide
+                  Recupere sommet Pile
+                  Marque sommet: Noir      
+                  Prendre successeur du sommet non-marqués noir et gris
+                  Les ajouter la pile
+
+Parcours de graphe : 
+      
