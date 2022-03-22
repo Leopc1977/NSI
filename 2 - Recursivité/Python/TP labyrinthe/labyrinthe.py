@@ -1,5 +1,4 @@
 from random import *
-from pygame import color
 import sys
 import pygame as pg
 
@@ -127,7 +126,7 @@ class Map():
         for l in range(len(_map)):
             for c in range(len(_map[0])):
                 print(_map[l][c], end=" ")
-            print("\n")
+            print("/n")
         print("Fin de l'affichage") 
 
     def Load(self):
@@ -141,8 +140,8 @@ class Map():
 testMap = Map(21,21) #l,c
 testMap.Load()
 
-tileSet=[pg.image.load("res/break.png"),pg.image.load("res/way.png"),pg.image.load("res/wall.png"),pg.image.load("res/start.png"),pg.image.load("res/end.png"),pg.image.load("res/path.png"),pg.image.load("res/visited.png")]
-display_surface = pg.display.set_mode((32*testMap.m+64,32*testMap.n+64))
+tileSet=[pg.image.load("C:/Users/leophancao/Documents/NSI/2 - Recursivité/Python/TP labyrinthe/res/break.png"),pg.image.load("C:/Users/leophancao/Documents/NSI/2 - Recursivité/Python/TP labyrinthe/res//way.png"),pg.image.load("C:/Users/leophancao/Documents/NSI/2 - Recursivité/Python/TP labyrinthe/res//wall.png"),pg.image.load("C:/Users/leophancao/Documents/NSI/2 - Recursivité/Python/TP labyrinthe/res//start.png"),pg.image.load("C:/Users/leophancao/Documents/NSI/2 - Recursivité/Python/TP labyrinthe/res//end.png"),pg.image.load("C:/Users/leophancao/Documents/NSI/2 - Recursivité/Python/TP labyrinthe/res//path.png"),pg.image.load("C:/Users/leophancao/Documents/NSI/2 - Recursivité/Python/TP labyrinthe/res//visited.png")]
+display_surface = pg.display.set_mode((32*testMap.m+64,32*testMap.n+64))    
 
 while 1:
     line,column = testMap.m, testMap.n
@@ -163,8 +162,6 @@ while 1:
                 display_surface.blit(tileSet[0], (x,y)) #WALL INTERIEUR
             elif e==1 or e==20:
                 display_surface.blit(tileSet[1],(x,y))  #WHITE WAY
-                """elif e==10:
-                display_surface.blit(tileSet[6],(x,y)) #VISITED"""
             else: 
                 #print(e)
                 dir = e[1]

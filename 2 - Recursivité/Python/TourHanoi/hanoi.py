@@ -27,7 +27,7 @@ class Hanoi():
         end = int(input("Vers où ?"))
         self.Move(start,end)
         print(self.lstEmplacements)
-        self.drawHanoi()
+        #self.drawHanoi()
         self.Play()
 
 testHanoi=Hanoi()

@@ -114,17 +114,18 @@ def createBT(lstOfKeys): # a finir
         except:
             pass
     node = lstNode[0]
-    for k in range(len(lstNode)):
+    """for k in range(len(lstNode)):
         pass
     for n in lstNode:
-        n.print()
+        n.print()"""
     return node
+"""
+if __name__ == "arbreBinaire":
+    a = Node(4,Node(5),Node(6))
+    b = Node(3,Node(8))
+    e = Node(2,a,b)
+    f = Node (1,e)
 
-a = Node(4,Node(5),Node(6))
-b = Node(3,Node(8))
-e = Node(2,a,b)
-f = Node (1,e)
-
-lstLevel = f.getLevel(3,[],0)
-for e in lstLevel:
-    e.print()
+    lstLevel = f.getLevel(3,[],0)
+    for e in lstLevel:
+        e.print()"""

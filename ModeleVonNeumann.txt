@@ -1,0 +1,31 @@
+Colossus (1943) :
+	- https://pixees.fr/informatiquelycee/prem/img/c8c_2.jpg
+	- Tube electronique / Tubes à vide
+
+Transistor (1947) 
+	- https://pixees.fr/informatiquelycee/prem/img/c8c_1.png :
+	- John Bardeen, William Shockley et Walter Brattain
+	- PNP ou NPN
+
+	=> Regroupé en circuit intégré
+
+Circuit intégré : 
+	- Transistor sont gravés 
+	- Plaque de silicium
+	- ~M de transistors
+	- Se comporte comme un interupteur
+		- Etat haut : 1 | Laisse passer le courant
+		- Etat Bas : 0  | Ne laisse pas passer le courant
+		=> base binaire
+
+Circuit logique : 
+	- Transistor est l'élément de base
+	- Permet de réaliser une opération booléenne 
+		=> Lié à l'algèbre de Boole
+
+AND : 
+	- Circuit (Porte) : NOT
+	- 2 transistors : NPN et PNP branché en série 
+
+NOR : 
+
